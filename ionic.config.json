@@ -1,0 +1,7 @@
+{
+  "name": "insurance-alert",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

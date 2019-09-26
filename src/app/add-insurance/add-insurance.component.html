@@ -1,0 +1,49 @@
+<ion-header translucent>
+    <ion-toolbar>
+      <ion-title>Adauga Asigurare</ion-title>
+      <ion-buttons slot="end">
+        <!--ion-button (click)="dismissModal()">Close</ion-button-->
+        <ion-button [routerLink]="['/tabs','tab1']">Close</ion-button>
+
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <form [formGroup]="insuranceForm" (ngSubmit)="onSubmit()">
+      <ion-list>
+          <ion-item>
+              <ion-label position="floating">Numar Asigurare</ion-label>
+              <ion-input formControlName="id" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="floating">Nume si Prenume</ion-label>
+                <ion-input formControlName="nameSurname" type="text"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label position="floating">CNP</ion-label>
+                  <ion-input formControlName="cnp" type="text"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label position="floating">Numar telefon</ion-label>
+                    <ion-input formControlName="phone" type="tel"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                      <ion-label position="floating">Mail</ion-label>
+                      <ion-input formControlName="mail" type="email"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Data expirare</ion-label>
+                    <ion-datetime formControlName="endDate" displayFormat="DD MM YYYY" placeholder="ZZ LL AAAA" [min]="minDate" max="2100"></ion-datetime>
+                  </ion-item>
+      </ion-list>
+      <div class="ion-padding">
+          <ion-button expand="block" type="submit" class="ion-no-margin">Adauga asigurarea</ion-button>
+        </div>
+    </form>
+  </ion-content>
